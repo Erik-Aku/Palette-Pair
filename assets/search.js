@@ -85,6 +85,68 @@ function displayRecipes(data) {
 
     }
 }
+// Retrieve data from Cocktail API
+function getCocktailData(userInput) {
+    console.log(userInput)
+    var apiUrl = 'https://api.api-ninjas.com/v1/cocktail?name=' + userInput;
+    var options = {
+        method: 'GET',
+        headers: { 'x-api-key': 'GMHVNXZRoCDIxxWN2NU9VQ==QnmOLePp49huqtNq' }
+    }
+
+    fetch(apiUrl, options)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    //ingredientsIndex = 0;
+                    displayCocktailData(data.slice(0,6));
+                    console.log(data);
+                })
+            } else {
+                alert('Error:' + response.statusText);
+            }
+        })
+}
+
+// Display data on screen from Cocktail Recipe API
+function displayCocktailData(data) {
+    console.log(data)
+
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i])
+
+       const cocktailCard = document.createElement('div')
+       const iconEl = document.createElement ('i')
+       iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
+       const cocktailTitle = document.createElement('h3')
+       cocktailTitle.textContent = data[i].name
+       const instructionstitleEl = document.createElement('h4')
+       instructionstitleEl.textContent = 'instructions'
+       const instructionsEl = document.createElement('p')
+       instructionsEl.textContent = data[i].instructions
+       cocktailCard.appendChild(cocktailTitle)
+       cocktailCard.appendChild(iconEl)
+       cocktailCard.appendChild(instructionstitleEl)
+       cocktailCard.appendChild(instructionsEl)
+       const ingredientsContainer = document.createElement('ul')
+        for (let j = 0; j< data[i].ingredients.length; j++) {
+            const ingredientsEl = document.createElement('li')
+            ingredientsEl.textContent = data[i].ingredients[j]
+            ingredientsContainer.appendChild(ingredientsEl);
+        }
+        cocktailCard.appendChild(ingredientsContainer);
+        cocktailContainerEl.appendChild(cocktailCard);
+
+        console.log(data[i].name)
+        console.log(data[i].instructions)
+        // save data result data to local storage
+        var name = data[i].name;
+        var instructionsList = data[i].instructions;
+        storeData.push({ name, instructionsList });
+        console.log(storeData)
+        localStorage.setItem("event", JSON.stringify(storeData));
+    }
+}
 
 getParams();
 
