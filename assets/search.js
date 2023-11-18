@@ -49,6 +49,43 @@ function searchSubmit(event) {
 
 }
 
+
+//Retrieve data from Food Recipe API
+function getRecipe(recipe) {
+    const url = `https://api.edamam.com/search?q=${recipe}&app_id=${apiID}&app_key=${apiKey}`
+    fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+            displayRecipes(data.hits.slice(0,6))
+        })
+}
+
+
+// Display data on screen from Food Recipe API
+function displayRecipes(data) {
+    console.log(data);
+    for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+
+        const recipeCardEl = document.createElement("div");
+        const iconEl = document.createElement ('i')
+        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
+        const recipeTitleEl = document.createElement("h3");
+        recipeTitleEl.textContent = data[i].recipe.label;
+        const recipeUrlEl = document.createElement("a");
+        recipeUrlEl.href = data[i].recipe.url;
+        const recipeImage = document.createElement("img");
+        recipeImage.src = data[i].recipe.image;
+        recipeUrlEl.appendChild(recipeImage);
+        recipeCardEl.appendChild(iconEl)
+        recipeCardEl.appendChild(recipeTitleEl);
+        recipeCardEl.appendChild(recipeUrlEl);
+        recipeContainer.appendChild(recipeCardEl);
+
+    }
+}
+
 getParams();
 
 searchForm.addEventListener('submit', searchSubmit);
