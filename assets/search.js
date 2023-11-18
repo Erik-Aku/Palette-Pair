@@ -83,11 +83,20 @@ function displayRecipes(data) {
         recipeCardEl.appendChild(recipeUrlEl);
         recipeContainer.appendChild(recipeCardEl);
 
+        // console.log(data[i].recipe.label)
+        // console.log(data[i].recipe.image)
+        
+        // save data result data to local storage
+        var label = data[i].recipe.label;
+        var image = data[i].recipe.image;
+        storeData.push({label,image});
+        console.log(storeData)
+        localStorage.setItem("event", JSON.stringify(storeData));
+        }
     }
-}
+
 // Retrieve data from Cocktail API
 function getCocktailData(userInput) {
-    console.log(userInput)
     var apiUrl = 'https://api.api-ninjas.com/v1/cocktail?name=' + userInput;
     var options = {
         method: 'GET',
@@ -142,7 +151,8 @@ function displayCocktailData(data) {
         // save data result data to local storage
         var name = data[i].name;
         var instructionsList = data[i].instructions;
-        storeData.push({ name, instructionsList });
+        var ingred = data[i].ingredients;
+        storeData.push({ name, instructionsList, ingred });
         console.log(storeData)
         localStorage.setItem("event", JSON.stringify(storeData));
     }

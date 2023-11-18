@@ -67,7 +67,7 @@ form.search-bar {
 }
 
 #cocktail-container i {
-    position: relative;
+    /* position: relative; */
     justify-content: flex-end;
     align-items: flex-end;
 
