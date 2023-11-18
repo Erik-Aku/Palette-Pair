@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---FONTAWESOME-->
+    <!----FONTAWESOME LINK-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!---BULMA-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
-        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!------BULMA LINK-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-----CSS LINK-->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Palette Pair</title>
+    <title>Palette Pair Search</title>
 </head>
 
 <body>
-
+    <!--- navbar -->
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <a class="navbar-item">
@@ -54,17 +53,44 @@
         </div>
     </nav>
 
-    <!---Dinner theme input bar-->
-    <div class="container is-responsive">
-        <form class="search-bar" id="dinner-theme">
-            <input type="text" id="userinput" placeholder="Enter your dinner party theme" style="font-size: large;">
-            <button class="btn btn-success" type="submit" id="submit-btn">
-                <i class="fa-regular fa-lightbulb fa-beat-fade fa-2xl" style="color: #606060;"></i>
+
+    <!--- user food and cocktail input-->
+    <section class="section">
+        <form id="search-input-form">
+            <div class="field" style="width: 20%;">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" id="food-input" type="text" placeholder="Please enter food...">
+                    <span class="icon is-small is-left">
+                    </span>
+                    <span class="icon is-small is-right">
+                    </span>
+                </p>
+            </div>
+            <div class="field " style="width: 20%;">
+                <p class="control has-icons-left">
+                    <input class="input" id="cocktail-input" type="text" placeholder="Please enter a cocktaill...">
+                    <span class="icon is-small is-left">
+                    </span>
+                </p>
+            </div>
+            <button class="button is-success" id="search-btn" type="submit">
+                Submit
             </button>
         </form>
-    </div>
+    </section>
+    </section>
+    <section class="dinner-container">
+        <section id="cocktail-section">
+            <h2>DRINKS</h2>
+            <div id="cocktail-container"></div>
+        </section>
+        <section id="recipe-section">
+            <h2>FOOD</h2>
+            <div id="recipe-container"></div>
+        </section>
+    </section>
 
-    <script src="assets/js/landing.js">  </script>
+    <script src="./assets/js/search.js"></script>
 
 </body>
 
