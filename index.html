@@ -13,55 +13,75 @@
         integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/style.css">
+    <!----GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <!---CSS-->
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Palette Pair</title>
 </head>
 
 <body>
-
-    <nav class="navbar is-transparent">
-        <div class="navbar-brand">
-            <a class="navbar-item">
-                <i class="fa-sharp fa-solid fa-martini-glass-citrus fa-lg" style="color: #000000;"></i>
-                <i class="fa-regular fa-heart fa-sm px-1" style="color: #000000;"></i>
-                <i class="fa-solid fa-utensils fa-lg" style="color: #000000;"></i>
-            </a>
-        </div>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-                    <p class="control">
-                        <a class="bd-tw-button button" href="./index.html">
-                            <span class="icon">
-                                <i class="fa-sharp fa-solid fa-house fa-sm"></i>
-                            </span>
-                            <span>
-                                HOME
-                            </span>
-                        </a>
-                    </p>
-                    <p class="control">
-                        <a class="button" href="./dinner-details.html">
-                            <span class="icon">
-                                <i class="fa-sharp fa-solid fa-heart fa-sm" style="color: #0042aa;"></i>
-                            </span>
-                            <span>FAVORITES</span>
-                        </a>
-                    </p>
+    <div class="container-background">
+        <nav class="navbar is-transparent">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <i class="fa-sharp fa-solid fa-martini-glass-citrus fa-lg" style="color: #F2B705;"></i>
+                    <i class="fa-regular fa-heart fa-sm px-1" style="color: #F2B705"></i>
+                    <i class="fa-solid fa-utensils fa-lg" style="color: #F2B705;"></i>
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="bd-tw-button button" href="./index.html"
+                                style="border: none; background-image: linear-gradient(to right, #f27405 0%, #a62f03 51%, #591202 100%)">
+                                <span class="icon">
+                                    <i class="fa-sharp fa-solid fa-house fa-sm" style="color: #ffffff;"></i>
+                                </span>
+                                <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif;border: none;">
+                                    HOME
+                                </span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button" href="./dinner-details.html"
+                                style="border: none; background-image: linear-gradient(to right, #f27405 0%, #a62f03 51%, #591202 100%)">
+                                <span class="icon">
+                                    <i class="fa-sharp fa-solid fa-heart fa-sm" style="color: #ffffff;"></i>
+                                </span>
+                                <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif; ">
+                                    FAVORITES
+                                </span>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
+        </nav>
+        <figure class="header-container">
+            <h2 class="header-title">Palette Pair</h2>
+            <p id="header-p"> Elevate your hosting experience by effortlessly planning and organizing unforgettable
+                evenings. Set themes, explore curated recipes, and simplify the party planning process to create lasting
+                dining memories. </p>
+        </figure>
+        <!---Dinner theme input bar-->
+        <div class="container is-responsive">
+            <form class="search-bar" id="dinner-theme">
+                <input type="text" id="userinput" placeholder="Enter your dinner party theme here"
+                    style="font-size: large;">
+                <button class="btn btn-success" type="submit" id="submit-btn">
+                    <i class="fa-regular fa-lightbulb fa-beat-fade fa-2xl" style="color: #F2B705;"></i>
+                </button>
+            </form>
         </div>
-        </div>
-    </nav>
-
-    <!---Dinner theme input bar-->
-    <div class="container is-responsive">
-        <form class="search-bar" id="dinner-theme">
-            <input type="text" id="userinput" placeholder="Enter your dinner party theme" style="font-size: large;">
-            <button class="btn btn-success" type="submit" id="submit-btn">
-                <i class="fa-regular fa-lightbulb fa-beat-fade fa-2xl" style="color: #606060;"></i>
-            </button>
-        </form>
     </div>
 
     <script src="./assets/landing.js">  </script>
