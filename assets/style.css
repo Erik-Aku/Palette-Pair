@@ -47,7 +47,7 @@ form.search-bar {
     grid-template-columns: 1fr 1fr;
     padding: 15px;
     gap: 15px;
-    /* grid-template-rows: repeat(3, 400px); */
+    grid-template-rows: repeat(3, 500px);
 }
 
 #cocktail-container > div, #recipe-container div {
@@ -57,11 +57,12 @@ form.search-bar {
     border-radius: 25px;
 
 }
-#recipe-container h3 {
+/* #recipe-container h3 {
     height: 30px;
-}
+} */
 #recipe-container img {
     height: calc(100% - 60px);
+    padding-top: 10px;
     width: 100%;
     border-radius: 20px;
 }
@@ -70,3 +71,20 @@ form.search-bar {
     transform: scale(1.03);
 }
 
+.dinner-container h3{
+    font-weight: bold;
+    padding: 2px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.dinner-container h4{
+    font-weight: bold;
+    padding: 4px;
+    font-size: 18px;
+}
+
+.dinner-container button {
+    display: flex;
+    float:right;
+}

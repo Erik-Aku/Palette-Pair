@@ -150,16 +150,19 @@ function displayCocktailData(data) {
        const iconEl = document.createElement ('i')
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
        const cocktailTitle = document.createElement('h3')
-       cocktailTitle.textContent = data[i].name
+       cocktailTitle.textContent = data[i].name;
        const instructionstitleEl = document.createElement('h4')
-       instructionstitleEl.textContent = 'instructions'
+       instructionstitleEl.textContent = 'Instructions:'
        const instructionsEl = document.createElement('p')
        instructionsEl.textContent = data[i].instructions
-       cocktailCard.appendChild(cocktailTitle)
+       const ingredientsTitle = document.createElement('h4')
+       ingredientsTitle.textContent = 'Ingredients:'
        cocktailCard.appendChild(btnEl);
        btnEl.appendChild(iconEl)
+       cocktailCard.appendChild(cocktailTitle)
        cocktailCard.appendChild(instructionstitleEl)
        cocktailCard.appendChild(instructionsEl)
+       cocktailCard.appendChild(ingredientsTitle)
        const ingredientsContainer = document.createElement('ul')
         for (let j = 0; j< data[i].ingredients.length; j++) {
             const ingredientsEl = document.createElement('li')
