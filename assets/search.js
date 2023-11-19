@@ -10,8 +10,11 @@ var dinnerTheme = JSON.parse(localStorage.getItem("dinnerTheme"))
 var apiID = "0c3909d6"
 var apiKey = "533370b8e8005d53cb946109d8f345ed"
 
-
+// *********************
+var drinksData
 var storeData = [];
+var recipeData
+// *********************
 
 // Function that captures user input from landing page and save to local storage
 function getParams() {
@@ -78,6 +81,7 @@ function getRecipe(recipe) {
 
 // Display data on screen from Food Recipe API
 function displayRecipes(data) {
+    recipeData = data
     console.log(data);
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
@@ -85,8 +89,16 @@ function displayRecipes(data) {
         const recipeCardEl = document.createElement("div");
         const btnEl = document.createElement('button');
         btnEl.classList = 'button';
+        btnEl.id = data[i].recipe.label
         btnEl.setAttribute("type", "button")
+          // ********************* Event listener and function to save chosen recipe to favorites
+          btnEl.addEventListener("click", function (event) {
+            addrecipetoFavorites(event.target.id)
+            console.log("button clicked")
+        })  // *********************
+
         const iconEl = document.createElement ('i')
+        iconEl.id = data[i].recipe.label
         iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
         const recipeTitleEl = document.createElement("h3");
         recipeTitleEl.textContent = data[i].recipe.label;
@@ -108,9 +120,9 @@ function displayRecipes(data) {
         // save data result data to local storage
         var label = data[i].recipe.label;
         var image = data[i].recipe.image;
-        storeData.push({label,image});
-        console.log(storeData)
-        localStorage.setItem("event", JSON.stringify(storeData));
+        // storeData.push({label,image});
+        // console.log(storeData)
+        // localStorage.setItem("event", JSON.stringify(storeData));
         }
     }
 
@@ -138,6 +150,7 @@ function getCocktailData(userInput) {
 
 // Display data on screen from Cocktail Recipe API
 function displayCocktailData(data) {
+    drinksData = data
     console.log(data)
 
     for (var i = 0; i < data.length; i++) {
@@ -146,8 +159,17 @@ function displayCocktailData(data) {
        const cocktailCard = document.createElement('div')
        const btnEl = document.createElement('button');
        btnEl.classList = 'button';
+       btnEl.id = data[i].name
        btnEl.setAttribute("type", "button")
        const iconEl = document.createElement ('i')
+         //    ********************* 
+         iconEl.id = data[i].name
+         //    ********************* Event listener and function to save chosen drink to favorites
+         btnEl.addEventListener("click", function (event) {
+             adddrinktoFavorites(event.target.id)
+             console.log(data)
+         })
+         //    *********************
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
        const cocktailTitle = document.createElement('h3')
        cocktailTitle.textContent = data[i].name;
@@ -178,12 +200,32 @@ function displayCocktailData(data) {
         var name = data[i].name;
         var instructionsList = data[i].instructions;
         var ingred = data[i].ingredients;
-        storeData.push({ name, instructionsList, ingred });
-        console.log(storeData)
-        localStorage.setItem("event", JSON.stringify(storeData));
+        // storeData.push({ name, instructionsList, ingred });
+        // console.log(storeData)
+        // localStorage.setItem("event", JSON.stringify(storeData));
     }
 }
-
+// ********************* Function that prevents duplication of saved recipes and adds the recipe to local storage if not already there. 
+var savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || []
+function addrecipetoFavorites(title) {
+    const recipe = recipeData.find(item => item.recipe.label === title)
+    const existingRecipes = savedRecipes.find (item => item.recipe.label === recipe.label)
+    if (!existingRecipes) {
+        savedRecipes.push(recipe)
+        localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes))
+    }
+}
+// ********************* Function that prevents duplication of saved drinks and adds the recipe to local storage if not already there. 
+var savedDrinks = JSON.parse(localStorage.getItem("savedDrinks")) || []
+function adddrinktoFavorites(title) {
+    const drink = drinksData.find(item => item.name === title)
+    const existingDrink = savedDrinks.find (item => item.name === drink.name)
+    if (!existingDrink) {
+        savedDrinks.push(drink)
+        localStorage.setItem("savedDrinks", JSON.stringify(savedDrinks))
+    }
+}
+// *********************
 getParams();
 
 searchForm.addEventListener('submit', searchSubmit);
