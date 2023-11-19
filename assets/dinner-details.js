@@ -1,11 +1,13 @@
 var cocktailContainerEl = document.querySelector('#cocktail-container');
 var cocktailTitleEl = document.querySelector('#cocktail-title');
+var recipeContainerEl = document.querySelector('#recipe-container')
 
 var finalCocktailArry = [];
 var themeNameArry = [];
 var finalRecipeArry = [];
 
 
+// retrieve local storage data and display favorites
 function getStorage() {
     themeName = JSON.parse(localStorage.getItem("event"));
     recipe = JSON.parse(localStorage.getItem("savedRecipes"));
@@ -19,7 +21,7 @@ function getStorage() {
     var name = (themeNameArry[0][0].query);
     name = decodeURI(name);
 
-
+// Display cocktail favorite form local storage
     const cocktailCard = document.createElement('div');
     cocktailCard.classList='cocktail-card';
     cocktailContainerEl.appendChild(cocktailCard)
@@ -58,35 +60,37 @@ function getStorage() {
         }
 
             cocktailCard.appendChild(ingredientsContainer);
-    
-
+     }
      
-    }
+     // Display recipe favorite form local storage
+     const recipeCard = document.createElement('div');
+     recipeCard.classList='recipe-card';
+     recipeContainerEl.appendChild(recipeCard)
+ 
+     const cardTitle1 = document.createElement('h2');
+     cardTitle1.textContent=name;
+     recipeCard.appendChild(cardTitle1);
+
+     for (var i=0; i < finalRecipeArry.length; i++) {
+        console.log(finalRecipeArry[i])
+
+        for (var j=0; j < finalRecipeArry[i].length; j++) {
+        
+            var recipeTitle = document.createElement('h3');
+            recipeTitle.textContent = finalRecipeArry[i][j].recipe.label;
+            recipeCard.appendChild(recipeTitle);
+
+            const recipeUrlEl = document.createElement("a");
+            recipeUrlEl.href = finalRecipeArry[i][j].recipe.url;
+            recipeCard.appendChild(recipeUrlEl);
+
+            const recipeImage = document.createElement("img");
+            recipeImage.className = "img-hover"
+            recipeImage.src = finalRecipeArry[i][j].recipe.image;
+            recipeUrlEl.appendChild(recipeImage);
+        }
+     }
   
 }
-
-
-// for (var i=0; i < finalArry.length; i++) {
-//     // console.log(finalArry[i][0].recipe);
-//     console.log(finalArry[i])
-//     // console.log(finalArry[i][0].ingredients)
-//     // console.log(finalArry[i][0].instructions)
-//     // console.log(finalArry[i][0].name)
-
-//   var cocktailTitle = document.createElement('h4');
-//   cocktailTitle.textContent = finalArry[i][0].name;
-//   cocktailCard.appendChild(cocktailTitle)
-
-//   const instructionsTitleEl = document.createElement('h4')
-//   instructionsTitleEl.textContent = 'Instructions:'
-//   cocktailCard.appendChild(instructionsTitleEl)
-//   const instructionsEl = document.createElement('p')
-//   instructionsEl.textContent = data[i].instructions
-
-
-
-
- 
-// }
 
 getStorage();
