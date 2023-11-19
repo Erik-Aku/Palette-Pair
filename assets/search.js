@@ -76,6 +76,7 @@ function displayRecipes(data) {
         const recipeUrlEl = document.createElement("a");
         recipeUrlEl.href = data[i].recipe.url;
         const recipeImage = document.createElement("img");
+        recipeImage.className = "img-hover"
         recipeImage.src = data[i].recipe.image;
         recipeUrlEl.appendChild(recipeImage);
         recipeCardEl.appendChild(iconEl)
