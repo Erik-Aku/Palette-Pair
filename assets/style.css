@@ -1,22 +1,58 @@
 body {
     margin: 0;
 }
+.container-background {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./images/background-image-actual.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+h2.header-container {
+    max-height: 100%;
+    max-width: 100;
+}
+.header-title {
+    font-size: 200px;
+    padding-left: 45px;
+    margin-top: 20px;
+    font-weight: 500;
+    margin-bottom: -30px;
+
+}
+#header-p {
+    padding-left: 57px;
+    max-width: 50%;
+    color: grey;
+    font-size: 21px;
+    font-family: 'Instrument Sans', sans-serif;
+   
+}
 
 div.container {
     display: flex;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 100px;
-    height: 7vh;
+    height: 6vh;
     max-width: 400px;
     width: 45%;
-    margin-top: 275px;
-    justify-content: center;
+    margin-top: 50px;
+    justify-content: left;
+    float: left;
+    padding-left: 57px;
+}
+
+.navbar {
+    background-color: transparent;
 }
 
 form.search-bar {
     display: flex;
+    background: rgba(255,255,255,0.2);
+    align-items: center;
     flex-direction: row;
-    max-width: 900px;
+    max-width: 400px;
     border-radius: 60px;
     padding: 10px 20px;
     gap: 20px;
@@ -25,16 +61,35 @@ form.search-bar {
 }
 
 .search-bar input {
-    display: flex;
+    background: transparent;
+    flex:1;
+    outline: none;
+    padding: 10px 3px;
     width: 100%;
     border: 0;
-    font-size: 14px;
     opacity: 85%;
+    color: #F2B705
 }
 
+::placeholder {
+    color: #F2B705;
+    font-size: 17px;
+    opacity:85%;
+    font-family: 'Instrument Sans', sans-serif;
+        
+}
 #submit-btn {
     border: 0;
-    background-color: white;
+    background-color: transparent;
+}
+
+.button {
+    background-color:#F2B705;
+    border-radius: 60px;
+    text-decoration-color: white;
+    outline: #F2B705;
+    height: 3vh;
+  
 }
 
 .dinner-container {
