@@ -47,7 +47,7 @@ form.search-bar {
     grid-template-columns: 1fr 1fr;
     padding: 15px;
     gap: 15px;
-    grid-template-rows: repeat(3, 400px);
+    /* grid-template-rows: repeat(3, 400px); */
 }
 
 #cocktail-container > div, #recipe-container div {
