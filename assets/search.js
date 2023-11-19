@@ -1,4 +1,6 @@
 var cocktailContainerEl = document.querySelector('#cocktail-container')
+var cocktailSectionEl = document.querySelector('#cocktail-title')
+var foodSectionEl = document.querySelector('#food-title'); 
 var recipeContainer = document.querySelector("#recipe-container")
 var searchFormEl = document.querySelector('#search-btn')
 var searchForm = document.querySelector('#search-input-form')
@@ -45,6 +47,18 @@ function searchSubmit(event) {
         getCocktailData(cocktailInput);
         cocktailContainerEl.textContent = "";
         recipeContainer.textContent = "";
+        // *****************************
+        cocktailSectionEl.textContent = "";
+        foodSectionEl.textContent = "";
+        // *******************************
+        var drinksSectionTitle = document.createElement('h2');
+        drinksSectionTitle.textContent = 'DRINKS';
+        cocktailSectionEl.appendChild(drinksSectionTitle);
+
+        var foodSectionTitle = document.createElement('h2');
+        foodSectionTitle.textContent = 'FOOD';
+        foodSectionEl.appendChild(foodSectionTitle);
+
     }
 
 }
@@ -69,6 +83,9 @@ function displayRecipes(data) {
         console.log(data[i]);
 
         const recipeCardEl = document.createElement("div");
+        const btnEl = document.createElement('button');
+        btnEl.classList = 'button';
+        btnEl.setAttribute("type", "button")
         const iconEl = document.createElement ('i')
         iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
         const recipeTitleEl = document.createElement("h3");
@@ -79,7 +96,8 @@ function displayRecipes(data) {
         recipeImage.className = "img-hover"
         recipeImage.src = data[i].recipe.image;
         recipeUrlEl.appendChild(recipeImage);
-        recipeCardEl.appendChild(iconEl)
+        recipeCardEl.appendChild(btnEl)
+        btnEl.appendChild(iconEl);
         recipeCardEl.appendChild(recipeTitleEl);
         recipeCardEl.appendChild(recipeUrlEl);
         recipeContainer.appendChild(recipeCardEl);
@@ -126,6 +144,9 @@ function displayCocktailData(data) {
         console.log(data[i])
 
        const cocktailCard = document.createElement('div')
+       const btnEl = document.createElement('button');
+       btnEl.classList = 'button';
+       btnEl.setAttribute("type", "button")
        const iconEl = document.createElement ('i')
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
        const cocktailTitle = document.createElement('h3')
@@ -135,7 +156,8 @@ function displayCocktailData(data) {
        const instructionsEl = document.createElement('p')
        instructionsEl.textContent = data[i].instructions
        cocktailCard.appendChild(cocktailTitle)
-       cocktailCard.appendChild(iconEl)
+       cocktailCard.appendChild(btnEl);
+       btnEl.appendChild(iconEl)
        cocktailCard.appendChild(instructionstitleEl)
        cocktailCard.appendChild(instructionsEl)
        const ingredientsContainer = document.createElement('ul')
