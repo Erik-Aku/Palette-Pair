@@ -6,14 +6,15 @@ var searchFormEl = document.querySelector('#search-btn')
 var searchForm = document.querySelector('#search-input-form')
 var drinkTitle = document.querySelectorAll(".drink-title")
 var dinnerTheme = JSON.parse(localStorage.getItem("dinnerTheme"))
+var favoritesNavEl = document.querySelector('#favorites')
 //EDAMAM API
 var apiID = "0c3909d6"
 var apiKey = "533370b8e8005d53cb946109d8f345ed"
 
 // *********************
-var drinksData
+var drinksData;
 var storeData = [];
-var recipeData
+var recipeData;
 // *********************
 
 // Function that captures user input from landing page and save to local storage
@@ -50,10 +51,10 @@ function searchSubmit(event) {
         getCocktailData(cocktailInput);
         cocktailContainerEl.textContent = "";
         recipeContainer.textContent = "";
-        // *****************************
+        
         cocktailSectionEl.textContent = "";
         foodSectionEl.textContent = "";
-        // *******************************
+        
         var drinksSectionTitle = document.createElement('h2');
         drinksSectionTitle.textContent = 'DRINKS';
         cocktailSectionEl.appendChild(drinksSectionTitle);
@@ -228,4 +229,15 @@ function adddrinktoFavorites(title) {
 // *********************
 getParams();
 
+// function favoritesClick(event) {
+//     event.preventDefault();
+//     localStorage.clear();
+    
+//     var queryString = './dinner-details.html';
+
+//     location.assign(queryString);
+// }
+
 searchForm.addEventListener('submit', searchSubmit);
+
+// favoritesNavEl.addEventListener('click', favoritesClick)
