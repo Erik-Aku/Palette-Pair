@@ -15,6 +15,7 @@ Palette Pair is a web application aimed at helping users plan dinner parties by 
 - Pear Icon: Free icons [https://www.flaticon.com/]
 - AI Images: AI images [https://openai.com/research/dall-e]
 - Flat Icon: Free icon website used for pear icon [https://www.flaticon.com/]
+- Midjourney: AI images [https://www.midjourney.com/home?callbackUrl=%2Fexplore]
 - Google Fonts: [https://fonts.google.com]
 
 ## Project Links
