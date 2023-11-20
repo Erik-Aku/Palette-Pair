@@ -62,7 +62,7 @@ function getStorage() {
   // Display recipe favorite form local storage
   const recipeCard = document.createElement("div");
   recipeCard.classList = "recipe-card";
-  recipeContainerEl.appendChild(recipeCard);
+  cocktailContainerEl.appendChild(recipeCard);
 
   const cardTitle1 = document.createElement("h2");
   cardTitle1.textContent = name;

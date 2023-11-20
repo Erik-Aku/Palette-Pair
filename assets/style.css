@@ -103,6 +103,7 @@ form.search-bar {
     padding: 15px;
     gap: 15px;
     grid-template-rows: repeat(3, 500px);
+    font-family: 'Instrument Sans', sans-serif;
 }
 
 #cocktail-container > div, #recipe-container div {
@@ -142,4 +143,41 @@ form.search-bar {
 .dinner-container button {
     display: flex;
     float:right;
+}
+
+.recipe-card h2 {
+    background-color: #F2B705;
+    border-radius: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 70%;    
+}
+
+.cocktail-card h2 {
+    background-color: #F2B705;
+    color: black;
+    margin-bottom: 10px;
+    border-radius: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    opacity: 70%;    
+}
+
+.cocktail-card h3 {
+    text-transform: capitalize;
+}
+
+.cocktail-title {
+    text-transform: capitalize;
+}
+
+.recipe-card img {
+    height: calc(100% - 60px);
+    border-radius: 20px;
+    padding-top: 10px;
+    width: 100%;
 }
