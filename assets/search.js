@@ -171,6 +171,7 @@ function displayCocktailData(data) {
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
        const cocktailTitle = document.createElement('h3')
        cocktailTitle.textContent = data[i].name;
+       cocktailTitle.classList='cocktail-title'
        const instructionstitleEl = document.createElement('h4')
        instructionstitleEl.textContent = 'Instructions:'
        const instructionsEl = document.createElement('p')

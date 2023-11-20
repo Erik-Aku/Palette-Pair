@@ -171,6 +171,10 @@ form.search-bar {
     text-transform: capitalize;
 }
 
+.cocktail-title {
+    text-transform: capitalize;
+}
+
 .recipe-card img {
     height: calc(100% - 60px);
     border-radius: 20px;
