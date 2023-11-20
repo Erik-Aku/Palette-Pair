@@ -29,11 +29,9 @@ function getStorage() {
   cocktailCard.appendChild(cardTitle);
 
   for (var i = 0; i < finalCocktailArry.length; i++) {
-    console.log(finalCocktailArry[i]);
     const ingredientsContainer = document.createElement("ul");
 
     for (var j = 0; j < finalCocktailArry[i].length; j++) {
-      console.log(finalCocktailArry[i][j].ingredients);
 
       var cocktailTitle = document.createElement("h3");
       cocktailTitle.textContent = finalCocktailArry[i][j].name;
@@ -69,7 +67,6 @@ function getStorage() {
   recipeCard.appendChild(cardTitle1);
 
   for (var i = 0; i < finalRecipeArry.length; i++) {
-    console.log(finalRecipeArry[i]);
 
     for (var j = 0; j < finalRecipeArry[i].length; j++) {
       var recipeTitle = document.createElement("h3");
