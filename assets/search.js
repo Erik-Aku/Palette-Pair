@@ -19,13 +19,8 @@ var recipeData;
 // Function that captures user input from landing page and save to local storage
 function getParams() {
     var searchParamsArr = document.location.search.split();
-    console.log(searchParamsArr)
-
     var query = searchParamsArr[0].split('=').pop();
-    // console.log(query)
-
     storeData.push({ query });
-    // console.log(storeData)
 
     // save user input to share local storage array
     localStorage.setItem("event", JSON.stringify(storeData));
@@ -33,14 +28,10 @@ function getParams() {
 
 // Function for event-listener when submit is clicked
 function searchSubmit(event) {
-    console.log("click");
     event.preventDefault();
 
     var foodInput = document.querySelector('#food-input').value;
-    console.log(foodInput)
-
     var cocktailInput = document.querySelector('#cocktail-input').value;
-    console.log(cocktailInput)
 
     if (!foodInput & !cocktailInput) {
         alert('Please enter food and cocktail choices');
@@ -66,14 +57,12 @@ function searchSubmit(event) {
 
 }
 
-
 //Retrieve data from Food Recipe API
 function getRecipe(recipe) {
     const url = `https://api.edamam.com/search?q=${recipe}&app_id=${apiID}&app_key=${apiKey}`
     fetch(url)
         .then(response => response.json())
         .then((data) => {
-            console.log(data)
             displayRecipes(data.hits.slice(0,6))
         })
 }
@@ -82,10 +71,7 @@ function getRecipe(recipe) {
 // Display data on screen from Food Recipe API
 function displayRecipes(data) {
     recipeData = data
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
-
         const recipeCardEl = document.createElement("div");
         const btnEl = document.createElement('button');
         btnEl.classList = 'button';
@@ -94,7 +80,6 @@ function displayRecipes(data) {
           // ********************* Event listener and function to save chosen recipe to favorites
           btnEl.addEventListener("click", function (event) {
             addrecipetoFavorites(event.target.id)
-            console.log("button clicked")
         })  // *********************
 
         const iconEl = document.createElement ('i')
@@ -113,16 +98,10 @@ function displayRecipes(data) {
         recipeCardEl.appendChild(recipeTitleEl);
         recipeCardEl.appendChild(recipeUrlEl);
         recipeContainer.appendChild(recipeCardEl);
-
-        // console.log(data[i].recipe.label)
-        // console.log(data[i].recipe.image)
         
         // save data result data to local storage
         var label = data[i].recipe.label;
         var image = data[i].recipe.image;
-        // storeData.push({label,image});
-        // console.log(storeData)
-        // localStorage.setItem("event", JSON.stringify(storeData));
         }
     }
 
@@ -139,7 +118,6 @@ function getCocktailData(userInput) {
             if (response.ok) {
                 response.json().then(function (data) {
                     displayCocktailData(data.slice(0,6));
-                    console.log(data);
                 })
             } else {
                 alert('Error:' + response.statusText);
@@ -150,10 +128,8 @@ function getCocktailData(userInput) {
 // Display data on screen from Cocktail Recipe API
 function displayCocktailData(data) {
     drinksData = data
-    console.log(data)
 
     for (var i = 0; i < data.length; i++) {
-        console.log(data[i])
 
        const cocktailCard = document.createElement('div')
        const btnEl = document.createElement('button');
@@ -165,7 +141,6 @@ function displayCocktailData(data) {
          // Event listener and function to save chosen drink to favorites
          btnEl.addEventListener("click", function (event) {
              adddrinktoFavorites(event.target.id)
-             console.log(data)
          })
     
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
@@ -193,8 +168,6 @@ function displayCocktailData(data) {
         cocktailCard.appendChild(ingredientsContainer);
         cocktailContainerEl.appendChild(cocktailCard);
 
-        console.log(data[i].name)
-        console.log(data[i].instructions)
         // save data result data to local storage
         var name = data[i].name;
         var instructionsList = data[i].instructions;
