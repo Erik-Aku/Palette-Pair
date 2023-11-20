@@ -2,6 +2,7 @@ var landingInputEl = document.querySelector('#dinner-theme');
 
 function landingSubmit(event) {
     event.preventDefault();
+    localStorage.clear();
 
     var userInputEl = document.querySelector('#userinput').value;
     console.log(userInputEl);
