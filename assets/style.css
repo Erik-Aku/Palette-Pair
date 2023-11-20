@@ -1,6 +1,7 @@
 body {
     margin: 0;
 }
+
 .container-background {
     width: 100%;
     min-height: 100vh;
@@ -13,6 +14,7 @@ h2.header-container {
     max-height: 100%;
     max-width: 100;
 }
+
 .header-title {
     font-size: 200px;
     padding-left: 45px;
@@ -21,13 +23,14 @@ h2.header-container {
     margin-bottom: -30px;
 
 }
+
 #header-p {
     padding-left: 57px;
     max-width: 50%;
     color: grey;
     font-size: 21px;
     font-family: 'Instrument Sans', sans-serif;
-   
+
 }
 
 div.container {
@@ -49,7 +52,7 @@ div.container {
 
 form.search-bar {
     display: flex;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     align-items: center;
     flex-direction: row;
     max-width: 400px;
@@ -62,7 +65,7 @@ form.search-bar {
 
 .search-bar input {
     background: transparent;
-    flex:1;
+    flex: 1;
     outline: none;
     padding: 10px 3px;
     width: 100%;
@@ -74,22 +77,33 @@ form.search-bar {
 ::placeholder {
     color: #F2B705;
     font-size: 17px;
-    opacity:85%;
+    opacity: 85%;
     font-family: 'Instrument Sans', sans-serif;
-        
+
 }
+
 #submit-btn {
     border: 0;
     background-color: transparent;
 }
 
 .button {
-    background-color:#F2B705;
+    background-color: #F2B705;
     border-radius: 60px;
     text-decoration-color: white;
     outline: #F2B705;
     height: 3vh;
-  
+
+}
+
+/* SEARCH RESULTS CSS */
+.section .button {
+    border-color: #F2B705;
+    color: #F2B705;
+    border-width: 2px;
+    font-weight: 700px;
+    font-family: 'Instrument Sans', sans-serif;
+    background: transparent
 }
 
 .dinner-container {
@@ -97,7 +111,8 @@ form.search-bar {
     grid-template-columns: 1fr 1fr;
 }
 
-#cocktail-container, #recipe-container {
+#cocktail-container,
+#recipe-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 15px;
@@ -105,16 +120,15 @@ form.search-bar {
     grid-template-rows: repeat(3, 500px);
 }
 
-#cocktail-container > div, #recipe-container div {
+#cocktail-container>div,
+#recipe-container div {
     position: relative;
     border: 2px solid grey;
     padding: 15px;
     border-radius: 25px;
 
 }
-/* #recipe-container h3 {
-    height: 30px;
-} */
+
 #recipe-container img {
     height: calc(100% - 60px);
     padding-top: 10px;
@@ -126,14 +140,14 @@ form.search-bar {
     transform: scale(1.03);
 }
 
-.dinner-container h3{
+.dinner-container h3 {
     font-weight: bold;
     padding: 2px;
     font-size: 22px;
     text-align: center;
 }
 
-.dinner-container h4{
+.dinner-container h4 {
     font-weight: bold;
     padding: 4px;
     font-size: 18px;
@@ -141,5 +155,5 @@ form.search-bar {
 
 .dinner-container button {
     display: flex;
-    float:right;
+    float: right;
 }

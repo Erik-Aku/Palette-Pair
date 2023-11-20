@@ -10,6 +10,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!------BULMA LINK-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!----GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <!---CSS-->
     <!-----CSS LINK-->
     <link rel="stylesheet" href="./assets/style.css">
     <title>Palette Pair Search</title>
@@ -20,9 +30,9 @@
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <a class="navbar-item">
-                <i class="fa-sharp fa-solid fa-martini-glass-citrus fa-lg" style="color: #000000;"></i>
-                <i class="fa-regular fa-heart fa-sm px-1" style="color: #000000;"></i>
-                <i class="fa-solid fa-utensils fa-lg" style="color: #000000;"></i>
+                <i class="fa-sharp fa-solid fa-martini-glass-citrus fa-lg" style="color: #F2B705;"></i>
+                    <i class="fa-regular fa-heart fa-sm px-1" style="color: #F2B705"></i>
+                    <i class="fa-solid fa-utensils fa-lg" style="color: #F2B705;"></i>
             </a>
         </div>
         </div>
@@ -32,9 +42,9 @@
                     <p class="control">
                         <a class="bd-tw-button button" href="./index.html">
                             <span class="icon">
-                                <i class="fa-sharp fa-solid fa-house fa-sm"></i>
+                                <i class="fa-sharp fa-solid fa-house fa-sm" style="color: #ffffff;"></i>
                             </span>
-                            <span>
+                            <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif;border: none;">
                                 HOME
                             </span>
                         </a>
@@ -42,9 +52,9 @@
                     <p class="control">
                         <a class="button" href="./dinner-details.html">
                             <span class="icon">
-                                <i class="fa-sharp fa-solid fa-heart fa-sm" style="color: #0042aa;"></i>
+                                <i class="fa-sharp fa-solid fa-heart fa-sm"  style="color: #ffffff;"></i>
                             </span>
-                            <span>FAVORITES</span>
+                            <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif; ">FAVORITES</span>
                         </a>
                     </p>
                 </div>
@@ -73,7 +83,7 @@
                     </span>
                 </p>
             </div>
-            <button class="button is-success" id="search-btn" type="submit">
+            <button class="button" id="search-btn" type="submit">
                 Submit
             </button>
         </form>
