@@ -19,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <!---CSS-->
     <!-----CSS LINK-->
     <link rel="stylesheet" href="./assets/style.css">
     <title>Palette Pair Search</title>
@@ -27,14 +26,11 @@
 
 <body>
     <!--- navbar -->
-    <nav class="navbar is-transparent">
+    <nav class="navbar-search">
         <div class="navbar-brand">
             <a class="navbar-item">
-                <i class="fa-sharp fa-solid fa-martini-glass-citrus fa-lg" style="color: #F2B705;"></i>
-                    <i class="fa-regular fa-heart fa-sm px-1" style="color: #F2B705"></i>
-                    <i class="fa-solid fa-utensils fa-lg" style="color: #F2B705;"></i>
+                <img src="./assets/images/pear.png" alt="Peach logo" style="width: 30px; height: 8vh;"> 
             </a>
-        </div>
         </div>
         <div class="navbar-end">
             <div class="navbar-item">
@@ -44,7 +40,7 @@
                             <span class="icon">
                                 <i class="fa-sharp fa-solid fa-house fa-sm" style="color: #ffffff;"></i>
                             </span>
-                            <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif;border: none;">
+                            <span style="color: #ffffff; font-family: 'Instrument Sans', sans-serif;">
                                 HOME
                             </span>
                         </a>
@@ -60,14 +56,14 @@
                 </div>
             </div>
         </div>
-        </div>
     </nav>
 
 
     <!--- user food and cocktail input-->
+<main class="search-page-main">
     <section class="section">
         <form id="search-input-form">
-            <div class="field" style="width: 20%;">
+            <div class="field">
                 <p class="control has-icons-left has-icons-right">
                     <input class="input" id="food-input" type="text" placeholder="Please enter food...">
                     <span class="icon is-small is-left">
@@ -76,7 +72,7 @@
                     </span>
                 </p>
             </div>
-            <div class="field " style="width: 20%;">
+            <div class="field ">
                 <p class="control has-icons-left">
                     <input class="input" id="cocktail-input" type="text" placeholder="Please enter a cocktaill...">
                     <span class="icon is-small is-left">
@@ -88,7 +84,6 @@
             </button>
         </form>
     </section>
-    </section>
     <section class="dinner-container">
         <section id="cocktail-section">
             <div id="cocktail-title"></div>
@@ -99,7 +94,7 @@
             <div id="recipe-container"></div>
         </section>
     </section>
-
+</main>
     <script src="./assets/search.js"></script>
 
 </body>
