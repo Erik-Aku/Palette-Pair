@@ -1,18 +1,11 @@
 body {
     margin: 0;
 }
-
-.container-background {
-    width: 100%;
+.landing-page-body {
     min-height: 100vh;
-    background-image: url(./images/background-image-actual.jpg);
+    background-image: url("./images/background-image-actual.jpg");
     background-position: center;
     background-size: cover;
-}
-
-h2.header-container {
-    max-height: 100%;
-    max-width: 100;
 }
 
 .header-title {
@@ -21,16 +14,35 @@ h2.header-container {
     margin-top: 20px;
     font-weight: 500;
     margin-bottom: -30px;
+}
 
+@media screen and (max-width: 1100px) {
+    .header-title {
+        font-size: 150px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .header-title {
+        font-size: 100px;
+    } 
+}
+@media screen and (max-width: 576px) {
+    .header-title {
+        font-size: 60px;
+    } 
 }
 
 #header-p {
-    padding-left: 57px;
+    margin-left: 57px;
     max-width: 50%;
     color: grey;
     font-size: 21px;
     font-family: 'Instrument Sans', sans-serif;
-
+}
+@media screen and (max-width: 600px) {
+    #header-p {
+        margin-top: 30px;
+    } 
 }
 
 div.container {
@@ -43,11 +55,27 @@ div.container {
     margin-top: 50px;
     justify-content: left;
     float: left;
-    padding-left: 57px;
+    margin-left: 57px;
+}
+@media screen and (max-width: 576px) {
+    div.container {
+        float:none;
+        width: initial;
+        display: flex;
+        justify-content: center;   
+        margin: 20px auto 0; 
+    } 
+    div.container form {
+        margin: 0 57px
+    }
 }
 
 .navbar {
     background-color: transparent;
+}
+
+#search-input-form {
+    margin-top: 115px;
 }
 
 form.search-bar {
@@ -63,6 +91,11 @@ form.search-bar {
     width: 95%;
 }
 
+#submit-btn {
+    background-color: transparent;
+    border: 0;
+}
+
 .search-bar input {
     background: transparent;
     flex: 1;
@@ -70,8 +103,8 @@ form.search-bar {
     padding: 10px 3px;
     width: 100%;
     border: 0;
-    opacity: 85%;
-    color: #F2B705
+    opacity: 90%;
+    color: #F2B705;
 }
 
 ::placeholder {
@@ -79,36 +112,98 @@ form.search-bar {
     font-size: 17px;
     opacity: 85%;
     font-family: 'Instrument Sans', sans-serif;
-
 }
 
-#submit-btn {
-    border: 0;
-    background-color: transparent;
+
+/* CSS FOR SEARCH RESULTS PAGE AND FAVORITES PAGE */
+.navbar-search {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+.search-page-main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    padding: 0 20px;
+}
+.section {
+    border-right: 2px solid black;
+    padding: 0;
+    padding-right: 20px;
+}
+
+#food-input, #cocktail-input {
+        padding: 7px;
 }
 
 .button {
     background-color: #F2B705;
-    border-radius: 60px;
+    border: none;
+    border-radius: 25px;
     text-decoration-color: white;
     outline: #F2B705;
     height: 3vh;
-
 }
-
-/* SEARCH RESULTS CSS */
 .section .button {
-    border-color: #F2B705;
-    color: #F2B705;
+    color: white;
     border-width: 2px;
-    font-weight: 700px;
+    font-weight: 800px;
     font-family: 'Instrument Sans', sans-serif;
-    background: transparent
+    font-size: large;
 }
+
+.input {
+    border-radius: 25px;
+}
+
 
 .dinner-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 650px) {
+    .dinner-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+#food-title {
+    padding: 15px;
+}
+
+#cocktail-title {
+    padding: 15px;
+}
+
+#food-title h2 {
+    border: 2px #F2B705 solid;
+    color: black;
+    background-color: #F2B705;
+    padding: 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 30px;
+    height: 70px;
+}
+
+#cocktail-title h2 {
+    border: 2px #F2B705 solid;
+    color: black;
+    background-color: #F2B705;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 30px;
+    height: 70px;
 }
 
 #cocktail-container,
@@ -121,13 +216,27 @@ form.search-bar {
     font-family: 'Instrument Sans', sans-serif;
 }
 
+@media screen and (max-width:1000px){
+    #cocktail-container, #recipe-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 500px);
+    }
+}
+
+#cocktail-container i {
+    color: white;
+}
+
+#recipe-container i {
+    color: white;
+}
+
 #cocktail-container>div,
 #recipe-container div {
     position: relative;
     border: 2px solid grey;
-    padding: 15px;
+    padding: 25px;
     border-radius: 25px;
-
 }
 
 #recipe-container img {
@@ -167,7 +276,8 @@ form.search-bar {
     color: black;
     font-weight: bold;
     margin-bottom: 10px;
-    opacity: 70%;    
+    opacity: 70%;
+    font-size: 20px;      
 }
 
 .cocktail-card h2 {
@@ -178,7 +288,8 @@ form.search-bar {
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
-    opacity: 70%;    
+    opacity: 70%; 
+    font-size: 20px;   
 }
 
 .cocktail-card h3 {
