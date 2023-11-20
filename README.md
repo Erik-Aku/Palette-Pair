@@ -12,8 +12,9 @@ Palette Pair is a web application aimed at helping users plan dinner parties by 
 - Bulma CSS: CSS framework for easy styling [https://bulma.io/]
 - Edamam API: API for retrieving dinner recipes [https://api.edamam.com/]
 - Ninja API: API for retrieving cocktail recipes [https://api-ninjas.com/api]
-- Pear Icon: Free icons [https://www.flaticon.com/]
-- AI Images: AI images [https://openai.com/research/dall-e]
+- Flat Icon: Free icons website utilized for pear logo [https://www.flaticon.com/]
+- Midjourney: AI images [https://www.midjourney.com/]
+- Google Fonts: Fonts [https://fonts.google.com]
 
 ## Project Links
 Deployed Web Application: Palette Pair [https://erik-aku.github.io/Palette-Pair/]
