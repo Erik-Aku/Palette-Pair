@@ -11,11 +11,10 @@ var favoritesNavEl = document.querySelector('#favorites')
 var apiID = "0c3909d6"
 var apiKey = "533370b8e8005d53cb946109d8f345ed"
 
-// *********************
 var drinksData;
 var storeData = [];
 var recipeData;
-// *********************
+
 
 // Function that captures user input from landing page and save to local storage
 function getParams() {
@@ -139,7 +138,6 @@ function getCocktailData(userInput) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    //ingredientsIndex = 0;
                     displayCocktailData(data.slice(0,6));
                     console.log(data);
                 })
@@ -163,14 +161,13 @@ function displayCocktailData(data) {
        btnEl.id = data[i].name
        btnEl.setAttribute("type", "button")
        const iconEl = document.createElement ('i')
-         //    ********************* 
          iconEl.id = data[i].name
-         //    ********************* Event listener and function to save chosen drink to favorites
+         // Event listener and function to save chosen drink to favorites
          btnEl.addEventListener("click", function (event) {
              adddrinktoFavorites(event.target.id)
              console.log(data)
          })
-         //    *********************
+    
        iconEl.classList = "fa-sharp fa-solid fa-heart fa-sm"
        const cocktailTitle = document.createElement('h3')
        cocktailTitle.textContent = data[i].name;
@@ -201,9 +198,6 @@ function displayCocktailData(data) {
         var name = data[i].name;
         var instructionsList = data[i].instructions;
         var ingred = data[i].ingredients;
-        // storeData.push({ name, instructionsList, ingred });
-        // console.log(storeData)
-        // localStorage.setItem("event", JSON.stringify(storeData));
     }
 }
 // ********************* Function that prevents duplication of saved recipes and adds the recipe to local storage if not already there. 
@@ -226,18 +220,7 @@ function adddrinktoFavorites(title) {
         localStorage.setItem("savedDrinks", JSON.stringify(savedDrinks))
     }
 }
-// *********************
+
 getParams();
 
-// function favoritesClick(event) {
-//     event.preventDefault();
-//     localStorage.clear();
-    
-//     var queryString = './dinner-details.html';
-
-//     location.assign(queryString);
-// }
-
 searchForm.addEventListener('submit', searchSubmit);
-
-// favoritesNavEl.addEventListener('click', favoritesClick)
