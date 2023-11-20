@@ -23,7 +23,7 @@ Palette Pair is a web application aimed at helping users plan dinner parties by 
 - GitHub Repository: Palette Pair Repo [https://github.com/Erik-Aku/Palette-Pair.git]
 
 ## Credits
-Thank you for the tips and suggestions from Bootcamp instructors, learning assistants, classmates, and resources. A huge thank you to my tutor Jaba for insights and suggestions. I have used http: //www.w3schools.com/ and http://www.stackoverflow.com, and https://chat.openai.com to research information. Lastly, thanks to OpenAI’s Chatgpt-4 for assistance in creating this README.md template.
+Thank you for the tips and suggestions from Bootcamp instructors, learning assistants, classmates, and resources. A huge thank you to my tutor Jaba for insights and suggestions. I have used http://www.w3schools.com/ and http://www.stackoverflow.com, and https://chat.openai.com to research information. Lastly, thanks to OpenAI’s Chatgpt-4 for assistance in creating this README.md template.
 
 
 ![LandingPage](https://github.com/Erik-Aku/Palette-Pair/assets/92487526/a404ec15-aa15-4e60-be90-41729365ad4d)
